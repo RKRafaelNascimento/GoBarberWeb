@@ -44,10 +44,12 @@ export default function Notifications() {
             const data = response.data.map((notification) => ({
                 ...notification,
                 timeDistance: formatDistance(
-                    parseISO(notification.createdAt, new Date(), {
+                    parseISO(notification.createdAt),
+                    new Date(),
+                    {
                         addSuffix: true,
                         locale: pt,
-                    })
+                    }
                 ),
             }));
 
@@ -55,7 +57,7 @@ export default function Notifications() {
         }
 
         loadNotifications();
-    });
+    }, []);
 
     return (
         <Container>

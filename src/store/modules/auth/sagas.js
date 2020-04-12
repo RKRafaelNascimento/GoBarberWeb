@@ -54,7 +54,7 @@ export function setToken({ payload }) {
     const { token } = payload;
 
     if (token) {
-        api.defaults.headers.Authorization = `Bearer ${token}`;
+        console.log('AUQI');
     }
 }
 
